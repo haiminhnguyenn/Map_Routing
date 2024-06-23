@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Hang Buom</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css"> 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <div id="wrapper">
+        <form class="grid" action="/result" id="form-login" method="POST">
+            <h1 class="form-heading">Tìm kiếm đường đi</h1>
+            <div class="form-group">
+                <label for="source"></label>
+                <input type="text" id="source" name="source" placeholder="Điểm bắt đầu">
+            </div>
+            <div class="form-group">
+                <label for="sink"></label>
+                <input type="text" id="sink" name="sink" placeholder="Địa điểm đến">
+            </div>
+            <input type="submit" value="Tìm kiếm" class="file_submit">
+        </form>
+    </div>
+
+    <div id="map" style="height: 1000px"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        const map = L.map('map').setView([21.03536, 105.85233], 12000); 
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+    </script>
+</body>
+</html>
